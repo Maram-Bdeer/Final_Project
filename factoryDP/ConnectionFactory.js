@@ -1,6 +1,7 @@
 const Csv=require('./csv');
 const Json=require('./json');
 const Txt=require('./txt');
+const XML=require('./xml');
 class ConnectionFactory{
     typesfiles(type){
         switch(type){
@@ -12,6 +13,9 @@ class ConnectionFactory{
 
             case 'Txt':
             return new Txt();
+
+            case 'XML':
+            return new xml();
             
             default:{
                 console.log('Unknown file  type...')
