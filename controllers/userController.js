@@ -38,7 +38,6 @@ exports.createNewUser = async (req, res, next) => {
   );
   await User.db.createNewUser(params)
 };
-
 exports.getUserById = async (req, res, next) => {
   try {
     let userId = req.params.user_id;

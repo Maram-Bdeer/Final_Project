@@ -3,7 +3,7 @@ const schemaShot = require('schema-shot')
 class snapSot{
 
 constructor(){
-
+    
 }
 
 
