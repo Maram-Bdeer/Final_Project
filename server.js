@@ -21,10 +21,6 @@ Csv.connectiondb();
 Json.connectiondb();
 Txt.connectiondb();
 
-
-
-
-
 class importFile{
 
   constructor(){
