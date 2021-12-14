@@ -2,7 +2,7 @@ const Csv=require('./csv');
 const Json=require('./json');
 const Txt=require('./txt');
 const XML=require('./xml');
-class ConnectionFactory{
+class ConnectionFactoryinterface{
     typesfiles(type){
         switch(type){
             case 'Csv':
@@ -25,4 +25,4 @@ class ConnectionFactory{
 
     }
 }
-module.exports = new ConnectionFactory();
+module.exports = new ConnectionFactoryinterface();
