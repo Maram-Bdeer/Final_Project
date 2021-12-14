@@ -1,36 +1,27 @@
-import express from 'express';
-import { createConnection } from 'mysql';
-
-const db=createConnection({
-    host:'3000',
-    user:'root',
-    password:'yazeed0598794803'
-});
-db.connect(err=>{
-    if(err){
-        throw err;
-    }
-    console.log('Mysql Connected')
-})
+const multer = require('multer');
+const csv= require('fast-csv');
+const fs=require('fs');
+const express=require('express');
 const app=express();
-app.get('createDb',(req,res)=>{
-    let sql='create database';
-    db.query(sql,(err,result)=>{
-        res.send('database creates');
-    });
+
+global.__basedir=__dirname;
+const storage=multer.diskStorage({
+    destination:(req,file,cb)=>{
+        cb(null,__basedir,'/upload/')
+    },
+    filename:(req,file,cb)=>{
+        cb(null , file.filename + "-" + Date.now+"-"+file.originalname)
+    }
+
+
 });
-app.listen('3000',() =>{
-    console.log('Server stated on port 3000');
-})
 
+const csvFilter=(req,file,cb)=>{
+    if(file.mimetype.includes("csv")){
+        cb(null,true)
+    } else{
+        cb("Please Upload Only CSV Files :", false)
+    }
+};
 
-var http = require('http');
-var fs = require('fs');
-http.createServer(function (req, res) {
-  //Open a file on the server and return its content:
-  fs.readFile('index.html', function(err, data) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.write(data);
-    return res.end();
-  });
-}).listen(8080);
+const upload=multer({storage:storage ,fileFilter:csvFilter})
