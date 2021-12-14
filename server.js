@@ -5,7 +5,9 @@ const fs = require('fs');
 const mysql = require('mysql2/promise')
 const upload = require('express-fileupload');
 const app = express();
+const schemaShot = require('schema-shot')
 const all =  require("./controllers/userController.js");
+const { isTypedArray } = require("util/types");
 
 
 class importFile{
@@ -83,8 +85,6 @@ function MssqlExport(dbconfig, options)
 };
 }
 }
-
-
  app.get('/', (req, res) => {
    res.status(200).send('Ok');
  }); 
