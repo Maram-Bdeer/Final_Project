@@ -16,7 +16,7 @@ const txt = require('./factoryDP/txt');
 const Csv=ConnectionFactory.typesfiles('Csv');
 const Json=ConnectionFactory.typesfiles('Json');
 const Txt=ConnectionFactory.typesfiles('Txt');
-//const XML=ConnectionFactory.typesfiles('XML');
+const XML=ConnectionFactory.typesfiles('XML');
 
 Csv.connectiondb();
 Json.connectiondb();
