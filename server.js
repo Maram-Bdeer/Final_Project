@@ -10,6 +10,21 @@ const all =  require("./controllers/userController.js");
 const { isTypedArray } = require("util/types");
 
 
+const ConnectionFactory=require('./factoryDP/ConnectionFactory');
+const txt = require('./factoryDP/txt');
+
+const Csv=ConnectionFactory.typesfiles('Csv');
+const Json=ConnectionFactory.typesfiles('Json');
+const Txt=ConnectionFactory.typesfiles('Txt');
+
+Csv.connectiondb();
+Json.connectiondb();
+Txt.connectiondb();
+
+
+
+
+
 class importFile{
 
   constructor(){
@@ -44,6 +59,9 @@ app.post('/', (req, res) =>{
 })
 }
 }
+
+
+
 
 class ExportFiles{
 
