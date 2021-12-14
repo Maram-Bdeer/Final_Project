@@ -9,7 +9,6 @@ const schemaShot = require('schema-shot')
 const all =  require("./controllers/userController.js");
 const { isTypedArray } = require("util/types");
 
-
 class importFile{
 
   constructor(){
@@ -51,7 +50,6 @@ constructor()
 {
 
 }
-
 static ExportFile(params) {
   
 var databaseConfig = {
@@ -74,7 +72,6 @@ var options = {
   log: true, 
   header: false      
 };
-
 
 function MssqlExport(dbconfig, options)
 {

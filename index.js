@@ -1,5 +1,6 @@
 import express from 'express';
 import { createConnection } from 'mysql';
+
 const db=createConnection({
     host:'3000',
     user:'root',

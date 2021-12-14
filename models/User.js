@@ -10,12 +10,8 @@ class User {
 
   }
 
-  
+
   save() {
-
-
-
-    
     let sql = `
     INSERT INTO users(
       User_id ,
@@ -31,7 +27,6 @@ class User {
       '${this.type}'
     )
     `;
-
     return db.execute(sql);
   }
 
@@ -40,8 +35,6 @@ class User {
     return db.execute(sql);
     
   }
-
- 
   static findById(id) {
     let sql = `SELECT * FROM user WHERE id = ${User_id};`;
 
