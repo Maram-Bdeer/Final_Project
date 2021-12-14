@@ -6,6 +6,8 @@ class User {
     this.user_name = user_name;
     this.password = password;
     this.email = email;
+        this.type = type;
+
   }
 
   
@@ -25,7 +27,8 @@ class User {
       '${this. User_id}',
       '${this.User_name}',
       '${this.password}',
-      '${this.email}'
+      '${this.email}',
+      '${this.type}'
     )
     `;
 
